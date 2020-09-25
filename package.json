@@ -1,0 +1,23 @@
+{
+  "name": "d-day-app",
+  "version": "1.0.0",
+  "description": "d-day check app",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^10.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckdtjs505/D-day-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ckdtjs505/D-day-app/issues"
+  },
+  "homepage": "https://github.com/ckdtjs505/D-day-app#readme"
+}

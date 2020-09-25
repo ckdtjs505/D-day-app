@@ -1,0 +1,65 @@
+@import "./reset.css";
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 900;
+}
+
+.content {
+  width: 25rem;
+  margin: auto;
+  margin-top: 8rem;
+  text-align: center;
+  border: solid black;
+}
+
+.header {
+  font-size: large;
+  color: blue;
+}
+
+.title {
+  margin: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 2rem;
+  font-size: 2rem;
+  width: 25rem;
+  background-color: green;
+  color: white;
+}
+
+.date {
+  font-size: 1.5rem;
+  text-align: right;
+  padding-bottom: 0.5rem;
+  margin-right: 2rem;
+}
+
+.date div {
+  margin: 0.4rem;
+}
+
+.currentDate {
+  font-size: 1.5rem;
+  text-align: right;
+  padding-bottom: 0.5rem;
+  margin-right: 2rem;
+}
+
+.currentDate div {
+  margin: 0.4rem;
+}
+
+.logo {
+  background-color: #282e38;
+  font-size: 2rem;
+  color: white;
+}
