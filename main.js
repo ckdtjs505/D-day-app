@@ -3,12 +3,15 @@ const { app, BrowserWindow } = require("electron");
 function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
     webPreferences: {
       nodeIntegration: true
     }
   });
+
+  // 전체 화면으로 열기
+  win.maximize();
+  // 메뉴 바 제거
+  win.removeMenu();
 
   // and load the index.html of the app.
   win.loadFile("index.html");
