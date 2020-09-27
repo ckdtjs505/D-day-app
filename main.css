@@ -55,7 +55,19 @@ body {
 
 .date span {
   height: 2rem;
-  background-color: red;
+  /* background-color: black; */
+
+  /* color: #17d4fe; */
+  font-family: "Anton", sans-serif;
+  letter-spacing: 20px;
+}
+
+.date .pur {
+  color: black;
+}
+
+.date .state {
+  color: red;
 }
 
 .currentDate {
