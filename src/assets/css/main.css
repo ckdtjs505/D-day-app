@@ -21,42 +21,43 @@ body {
 }
 
 .header {
-  margin-top: 10rem;
+  margin-top: 5rem;
   margin-bottom: 3rem;
-  font-size: 5.5rem;
+  font-size: 8rem;
   color: blue;
   line-height: 1rem;
   vertical-align: middle;
 }
 
 .header img {
-  width: 5rem;
-  height: 5rem;
+  width: 7rem;
+  height: 7rem;
 }
 
 .title {
   margin: auto;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   border-radius: 2rem;
-  font-size: 4rem;
-  width: 50rem;
-  letter-spacing: 1rem;
+  font-size: 8rem;
+  width: 91rem;
+  letter-spacing: 3rem;
   background-color: green;
   color: white;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .date {
-  font-size: 6rem;
+  font-size: 8rem;
   line-height: 10rem;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 .date span {
   height: 2rem;
   /* background-color: black; */
-
   /* color: #17d4fe; */
   font-family: "Anton", sans-serif;
   letter-spacing: 20px;
@@ -64,13 +65,17 @@ body {
 
 .date .pur {
   color: black;
+  font-size: 9rem;
 }
 
 .date .state {
-  color: red;
+  color: green;
+  font-size: 9rem;
 }
 
 .currentDate {
+  display: flex;
+  justify-content: space-around;
   font-size: 3rem;
   padding-bottom: 0.5rem;
 }
