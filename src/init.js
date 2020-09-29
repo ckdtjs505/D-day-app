@@ -18,7 +18,7 @@ function createWindow() {
   // and load the index.html of the app.
   win.loadFile("./src/index.html");
   // Open the DevTools.
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
 }
 
 // This method will be called when Electron has finished
@@ -45,3 +45,8 @@ app.whenReady().then(createWindow);
 
 // // In this file you can include the rest of your app's specific main process
 // // code. You can also put them in separate files and require them here.
+
+app.setLoginItemSettings({
+  openAtLogin: true,
+  path: app.getPath("exe")
+});
