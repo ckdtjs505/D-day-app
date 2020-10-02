@@ -5,17 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./dist/main.js",
+    "start": "node ./src/app.js",
     "build": "webpack"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "pug": "^3.0.0",
-    "request": "^2.79.0"
+    "express": "^4.17.1"
   },
   "devDependencies": {
+    "pug": "^3.0.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   }
