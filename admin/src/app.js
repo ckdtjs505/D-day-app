@@ -1,15 +1,16 @@
-// import express from "express";
-// import path from "path";
-
-const express = require("express");
-const path = require("path");
+import express from "express";
+import morgan from "morgan";
+import path from "path";
 
 const app = express();
 const port = 3000;
 
-// app.engine("pug", require("pug").__express);
+// pug 삽입
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
+
+// 로그 삽입
+app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
   res.render("main");
