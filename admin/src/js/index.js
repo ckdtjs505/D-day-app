@@ -1,3 +1,4 @@
+import "../scss/index.scss";
 import "./test";
 
-alert("123");
+console.log("123");
