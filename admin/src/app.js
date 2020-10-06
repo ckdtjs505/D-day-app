@@ -9,6 +9,9 @@ const port = 3000;
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
+// dist file 위치 지정
+app.use("/dist", express.static(path.join(__dirname, "dist")));
+
 // 로그 삽입
 app.use(morgan("dev"));
 

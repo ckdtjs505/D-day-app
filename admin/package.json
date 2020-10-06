@@ -6,12 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:server": "nodemon --exec babel-node ./src/app.js",
-    "dev:assets": "cd src && webpack -w",
+    "dev:assets": "cd src && cross-env WEBPACK_ENV=development webpack -w",
     "build": "webpack"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^7.0.2",
     "express": "^4.17.1",
     "morgan": "^1.10.0"
   },
