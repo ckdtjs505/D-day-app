@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 html(lang="ko")
     head
         meta(charset="UTF-8")
@@ -6,6 +5,12 @@ html(lang="ko")
         title 우민 
     body
         div 일수 
-            span 1일 
-        button 초기화
+            span(class= `${countValue}`)= `${countValue}일` 
+        //- if( countValue )
+        //-     button#startBtn 시작
+        //- else 
+        button#resetBtn 초기화
+        script.
+            window.countValue = !{JSON.stringify(countValue)}
         script(src="/dist/main.js")
+        

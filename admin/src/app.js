@@ -1,7 +1,9 @@
 import express from "express";
 import morgan from "morgan";
 import path from "path";
+import bodyParser from "body-parser";
 import "./db";
+import Count from "./models/count";
 
 const app = express();
 const port = 3000;
@@ -16,8 +18,32 @@ app.use("/dist", express.static(path.join(__dirname, "dist")));
 // 로그 삽입
 app.use(morgan("dev"));
 
-app.get("/", (req, res) => {
-  res.render("index");
+app.get("/", async (req, res) => {
+  const countValue = await Count.find({});
+  res.render("index", { countValue });
+});
+
+app.post("/reset", (req, res) => {
+  console.log(req.body);
+  console.log(req.params);
+
+  try {
+    res.render("index", { countValue: 0 });
+  } catch (err) {
+    res.status(400);
+  } finally {
+    res.end();
+  }
+});
+
+app.post("/start", async (req, res) => {
+  try {
+    await Count.create({});
+  } catch (err) {
+    res.status(400);
+  } finally {
+    res.end();
+  }
 });
 
 app.listen(port, () => {

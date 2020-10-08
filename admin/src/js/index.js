@@ -1,4 +1,4 @@
 import "../scss/index.scss";
-import "./test";
+import admin from "./main.js";
 
-console.log("123");
+new admin();
