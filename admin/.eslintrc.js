@@ -1,11 +1,12 @@
 module.exports = {
   env: {
     node: true,
-    es2021: true
+    es6: true,
+    browser: true
   },
   extends: "eslint:recommended",
   parserOptions: {
-    ecmaVersion: 12,
+    ecmaVersion: 2018,
     sourceType: "module"
   },
   rules: {}

@@ -1,7 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import path from "path";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 import "./db";
 import Count from "./models/count";
 
@@ -19,16 +19,21 @@ app.use("/dist", express.static(path.join(__dirname, "dist")));
 app.use(morgan("dev"));
 
 app.get("/", async (req, res) => {
-  const countValue = await Count.find({});
-  res.render("index", { countValue });
+  try {
+    const countValue = await Count.find({});
+    res.render("index", { countValue });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
-app.post("/reset", (req, res) => {
-  console.log(req.body);
-  console.log(req.params);
+app.post("/reset/:id", async (req, res) => {
+  const {
+    params: { id }
+  } = req;
 
   try {
-    res.render("index", { countValue: 0 });
+    await Count.deleteOne({ _id: id });
   } catch (err) {
     res.status(400);
   } finally {

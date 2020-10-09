@@ -6,10 +6,9 @@ html(lang="ko")
     body
         div 일수 
             span(class= `${countValue}`)= `${countValue}일` 
-        //- if( countValue )
-        //-     button#startBtn 시작
-        //- else 
         button#resetBtn 초기화
+        button#startBtn 시작
+
         script.
             window.countValue = !{JSON.stringify(countValue)}
         script(src="/dist/main.js")
