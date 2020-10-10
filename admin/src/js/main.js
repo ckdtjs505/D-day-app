@@ -7,15 +7,17 @@ export default class admin {
   }
 
   buildUI() {
+    this.time = document.querySelector(".time");
+    this.start = document.querySelector(".start");
     this.resetBtn = document.getElementById("resetBtn");
     this.startBtn = document.getElementById("startBtn");
 
     if (countValue[0]) {
-      this.resetBtn.style.display = "block";
-      this.startBtn.style.display = "none";
+      this.time.style.display = "block";
+      this.start.style.display = "none";
     } else {
-      this.resetBtn.style.display = "none";
-      this.startBtn.style.display = "block";
+      this.time.style.display = "none";
+      this.start.style.display = "block";
     }
   }
 

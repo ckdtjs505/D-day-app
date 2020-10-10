@@ -4,10 +4,11 @@ html(lang="ko")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title 우민 
     body
-        div 일수 
-            span(class= `${countValue}`)= `${countValue}일` 
-        button#resetBtn 초기화
-        button#startBtn 시작
+        div.time 일수 
+            span(class= `${countValue[0]}`)= `${countValue[0] ? countValue[0].count + 1 : ''}일` 
+            button#resetBtn 초기화
+        div.start 
+            button#startBtn 시작
 
         script.
             window.countValue = !{JSON.stringify(countValue)}
