@@ -4,6 +4,7 @@ import path from "path";
 // import bodyParser from "body-parser";
 import "./db";
 import Count from "./models/count";
+import schedule from "node-schedule";
 
 const app = express();
 const port = 3000;
@@ -17,6 +18,19 @@ app.use("/dist", express.static(path.join(__dirname, "dist")));
 
 // 로그 삽입
 app.use(morgan("dev"));
+
+// 스케줄려 추가 정각에 실행
+schedule.scheduleJob({ hour: 0, minute: 0, second: 0 }, async () => {
+  const countValue = await Count.find({});
+
+  // 값이 없으면 종료
+  if (countValue.length === 0) return false;
+
+  // 값 증가 시키기
+  await Count.findByIdAndUpdate(countValue[0]._id, {
+    count: countValue[0].count + 1
+  });
+});
 
 app.get("/", async (req, res) => {
   try {
