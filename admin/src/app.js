@@ -35,7 +35,6 @@ schedule.scheduleJob({ hour: 0, minute: 0, second: 0 }, async () => {
 app.get("/", async (req, res) => {
   try {
     const countValue = await Count.find({});
-    console.log(countValue);
     res.render("index", { countValue });
   } catch (error) {
     console.log(error);
@@ -67,6 +66,15 @@ app.post("/start/:goalDate", async (req, res) => {
     res.status(400);
   } finally {
     res.end();
+  }
+});
+
+app.get("/app", async (req, res) => {
+  try {
+    const countValue = await Count.find({});
+    res.json(countValue);
+  } catch (error) {
+    console.log(error);
   }
 });
 
