@@ -5,9 +5,11 @@ html(lang="ko")
         title 우민 
     body
         div.time 일수 
-            span(class= `${countValue[0]}`)= `${countValue[0] ? countValue[0].count + 1 : ''}일` 
+            span(class= `${countValue[0]}`)= `달성일 : ${countValue[0] ? countValue[0].count + 1 : ''}일` 
+            div(class= `${countValue[0]}`)= `목표일 : ${countValue[0] ? countValue[0].goal : ''}일` 
             button#resetBtn 초기화
         div.start 
+            input(type="text" placeholder="목표값을 입력하시오").inputGoal
             button#startBtn 시작
 
         script.

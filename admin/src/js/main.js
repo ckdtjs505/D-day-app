@@ -11,6 +11,7 @@ export default class admin {
     this.start = document.querySelector(".start");
     this.resetBtn = document.getElementById("resetBtn");
     this.startBtn = document.getElementById("startBtn");
+    this.goalInput = document.querySelector(".inputGoal");
 
     if (countValue[0]) {
       this.time.style.display = "block";
@@ -27,7 +28,22 @@ export default class admin {
     });
 
     this.startBtn.addEventListener("click", () => {
-      fetch("/start", { method: "POST" }).then(() => location.reload("true"));
+      // 목표값 없는 경우 예외처리
+      if (!this.goalInput.value) {
+        alert("목표값을 입력해 주세요");
+        return;
+      }
+
+      // 목표값이 숫자가 아니면 예외처리
+      // if (typeof this.goalInput.value !== "number") {
+      //   alert("목표값을 숫자로 입력해 주세요");
+      //   return;
+      // }
+
+      // 서버 호출후 페이지 리로드
+      fetch(`/start/${this.goalInput.value}`, { method: "POST" }).then(() =>
+        location.reload("true")
+      );
     });
   }
 }

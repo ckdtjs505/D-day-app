@@ -35,6 +35,7 @@ schedule.scheduleJob({ hour: 0, minute: 0, second: 0 }, async () => {
 app.get("/", async (req, res) => {
   try {
     const countValue = await Count.find({});
+    console.log(countValue);
     res.render("index", { countValue });
   } catch (error) {
     console.log(error);
@@ -55,9 +56,13 @@ app.post("/reset/:id", async (req, res) => {
   }
 });
 
-app.post("/start", async (req, res) => {
+app.post("/start/:goalDate", async (req, res) => {
+  const {
+    params: { goalDate }
+  } = req;
+
   try {
-    await Count.create({});
+    await Count.create({ goal: goalDate });
   } catch (err) {
     res.status(400);
   } finally {
