@@ -29,28 +29,21 @@
       </div>
 
       <div class="logo">
-        <div class="currentDate">
-          <div>
-            <script>
-              document.write(
-                `${new Date().getFullYear()}년 ${
-                  new Date().getMonth() + 1
-                }월 ${new Date().getDate()}일 시작`
-              );
-            </script>
-          </div>
-
+        <div class="currentDate" >
+          <div> <span class="startDate"> 0000.00.00 </span> 시작 </div>
+          
           <img src="./img/woomin.png" alt="" />
 
           <div>
             <script>
               document.write(
-                `${new Date().getFullYear()}년 ${
+                `${new Date().getFullYear()}.${
                   new Date().getMonth() + 1
-                }월 ${new Date().getDate()}일 현재`
+                }.${new Date().getDate()} 현재`
               );
             </script>
           </div>
+
         </div>
       </div>
     </div>
