@@ -14,10 +14,14 @@ class app {
     fetch(`http://localhost:3000/app`)
       .then(ele => ele.json())
       .then(data => {
-        const { count, goal, startDate } = data[0];
-        console.log(this.date.querySelector(".pur"));
-        this.date.querySelector(".pur").innerHTML = goal;
-        this.date.querySelector(".state").innerHTML = `${this.numberToString(count + 1)}`;
+        const { goal, startDate } = data[0];
+        const count = Math.ceil(
+          (new Date().getTime() - new Date(startDate.split("T")[0]).getTime()) /
+            (1000 * 60 * 60 * 24)
+        );
+
+        this.date.querySelector(".pur").innerHTML = `${this.numberToString(goal)}`;
+        this.date.querySelector(".state").innerHTML = `${this.numberToString(count)}`;
         this.startDate.innerHTML =
           `${startDate.split("-")[0]}.` +
           `${startDate.split("-")[1]}.` +
