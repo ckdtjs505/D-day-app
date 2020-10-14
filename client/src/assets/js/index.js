@@ -1,13 +1,23 @@
+const { shell } = require("electron");
+
 class app {
   constructor() {
     this.buildUI();
     this.getData();
+    this.event();
     this.data = [];
   }
 
   buildUI() {
     this.date = document.querySelector(".date");
     this.startDate = document.querySelector(".startDate");
+    this.logo = document.querySelector(".logo");
+  }
+
+  event() {
+    this.logo.addEventListener("click", () => {
+      shell.openExternal("http://woominec.co.kr/");
+    });
   }
 
   getData() {
