@@ -6,8 +6,8 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true
     },
-    icon: null
-    // resizable: false
+    icon: null,
+    resizable: false
   });
 
   // 전체 화면으로 열기
