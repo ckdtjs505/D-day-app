@@ -11,7 +11,10 @@ class app {
   buildUI() {
     this.date = document.querySelector(".date");
     this.startDate = document.querySelector(".startDate");
+    this.currentDate = document.querySelector(".currentDate");
     this.logo = document.querySelector(".logo");
+
+    this.currentDate.innerHTML = new Date().toLocaleDateString();
   }
 
   event() {
@@ -33,8 +36,8 @@ class app {
         this.date.querySelector(".pur").innerHTML = `${this.numberToString(goal)}`;
         this.date.querySelector(".state").innerHTML = `${this.numberToString(count)}`;
         this.startDate.innerHTML =
-          `${startDate.split("-")[0]}.` +
-          `${startDate.split("-")[1]}.` +
+          `${startDate.split("-")[0]}. ` +
+          `${startDate.split("-")[1]}. ` +
           `${startDate.split("-")[2].split("T")[0]}`;
       });
   }

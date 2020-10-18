@@ -73,21 +73,17 @@ body {
   font-size: 9rem;
 }
 
-.currentDate {
+.footer {
   display: flex;
   justify-content: space-around;
+  background-color: #282e38;
+  color: white;
   font-size: 3rem;
   padding-bottom: 0.5rem;
 }
 
-.currentDate div {
+.footer div {
   margin: 0.4rem;
-}
-
-.footer {
-  background-color: #282e38;
-  font-size: 2rem;
-  color: white;
 }
 
 .logo {
