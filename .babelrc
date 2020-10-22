@@ -1,3 +1,4 @@
 {
-  "presets": ["@babel/preset-env"]
+  "presets": ["@babel/preset-env"],
+  "ignore": ["src/dist","src/scss", "src/js", "src/webpack.config.js"]
 }
