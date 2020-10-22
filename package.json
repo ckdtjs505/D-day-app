@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:server": "nodemon --exec babel-node ./src/app.js",
-    "dev:assets": "cd src && WEBPACK_ENV=development webpack -w",
+    "dev:assets": "cd src && cross-env WEBPACK_ENV=development webpack -w",
     "build:server": "babel src --out-dir build",
-    "build:assets": "cd src && WEBPACK_ENV=production webpack",
+    "build:assets": "cd src && cross-env WEBPACK_ENV=production webpack",
     "copyAll": "cp -R src/dist build && cp -R src/views build",
     "start": "npm run build && node build/app.js",
     "build": "npm run build:server && npm run build:assets && npm run copyAll"
