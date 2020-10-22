@@ -7,11 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:server": "nodemon --exec babel-node ./src/app.js",
     "dev:assets": "cd src && cross-env WEBPACK_ENV=development webpack -w",
-    "build": "webpack"
+    "build:server": "babel src --out-dir build",
+    "build:assets": "cd src && cross-env WEBPACK_ENV=production webpack",
+    "build": "npm run build:server && npm run build:assets"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.12.1",
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
