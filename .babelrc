@@ -1,4 +1,7 @@
 {
   "presets": ["@babel/preset-env"],
+  "plugins": [
+    ["@babel/transform-runtime"]
+  ],
   "ignore": ["src/dist","src/scss", "src/js", "src/webpack.config.js"]
 }
