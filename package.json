@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "admin": "cd ./admin/ && npm run dev:server",
-    "client": "cd ./client/ && npm run start"
+    "client": "cd ./client/ && npm run start",
+    "start": "cd ./admin/ && npm run start"
   },
   "repository": {
     "type": "git",
