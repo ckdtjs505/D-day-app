@@ -1,0 +1,30 @@
+{
+  "name": "d-day-app",
+  "version": "1.0.0",
+  "description": "d-day-app",
+  "main": "./src/init.js",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^10.1.2",
+    "electron-builder": "^22.8.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build:win64": "electron-builder --win --x64"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckdtjs505/D-day-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ckdtjs505/D-day-app/issues"
+  },
+  "build": {
+    "productName": "d-day-app"
+  },
+  "homepage": "https://github.com/ckdtjs505/D-day-app#readme"
+}
