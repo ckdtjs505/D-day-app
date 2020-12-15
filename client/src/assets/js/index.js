@@ -1,6 +1,5 @@
-const { shell } = require("electron");
-
-class app {
+const { shell, remote } = require("electron");
+class dayApp {
   constructor() {
     this.buildUI();
     this.getData();
@@ -13,14 +12,26 @@ class app {
     this.startDate = document.querySelector(".startDate");
     this.currentDate = document.querySelector(".currentDate");
     this.logo = document.querySelector(".logo");
+    this.closeBtn = document.querySelector("button.close");
 
     this.currentDate.innerHTML = new Date().toLocaleDateString();
+    this.hideSetTimeout = null;
   }
 
   event() {
     this.logo.addEventListener("click", () => {
       shell.openExternal("http://woominec.co.kr/");
     });
+
+    // 종료 버튼 클릭시 창 숨김
+    this.closeBtn.addEventListener("click", () => {
+      this.hideMainWindow();
+    });
+  }
+
+  // 메인 윈도우 숨기기
+  hideMainWindow() {
+    window.close();
   }
 
   getData() {
@@ -59,4 +70,4 @@ class app {
   }
 }
 
-new app();
+new dayApp();
