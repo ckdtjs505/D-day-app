@@ -37,7 +37,7 @@ function createWindow() {
   setTimeout(() => {
     // and load the index.html of the app.
     win.loadFile("./src/index.html");
-  }, 2000);
+  }, 1000);
 
   // Open the DevTools.
   // win.webContents.openDevTools();

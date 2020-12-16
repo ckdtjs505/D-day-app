@@ -10,6 +10,60 @@ body {
   background-color: #f5f8fc;
 }
 
+header {
+  background-color: #282e38;
+  height: 2.5rem;
+  position: relative;
+}
+
+header .left {
+  position: absolute;
+  text-align: center;
+  top: 4px;
+  left: 5px;
+  z-index: 100px;
+}
+
+header .left:hover {
+  left: 5px;
+  cursor: pointer;
+}
+
+header .center {
+  position: absolute;
+  text-align: center;
+  top: 9px;
+  left: 5rem;
+  right: 5rem;
+  color: white;
+}
+
+header .left_logo {
+  height: 2rem;
+}
+
+header .right {
+  position: absolute;
+  text-align: center;
+  top: 9px;
+  right: 5px;
+}
+
+header .right button {
+  background-color: #282e38;
+  border: none;
+}
+
+header .right .icon {
+  background-color: #282e38;
+  border: none;
+}
+
+header .right button:hover {
+  height: 100%;
+  cursor: pointer;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -21,8 +75,8 @@ body {
 }
 
 .header {
-  margin-top: 5rem;
-  margin-bottom: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
   font-size: 8rem;
   color: blue;
   line-height: 1rem;

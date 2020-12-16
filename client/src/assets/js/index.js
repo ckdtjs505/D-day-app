@@ -11,6 +11,7 @@ class dayApp {
     this.date = document.querySelector(".date");
     this.startDate = document.querySelector(".startDate");
     this.currentDate = document.querySelector(".currentDate");
+    this.headerLogo = document.querySelector(".left_logo");
     this.logo = document.querySelector(".logo");
     this.closeBtn = document.querySelector("button.close");
 
@@ -20,6 +21,10 @@ class dayApp {
 
   event() {
     this.logo.addEventListener("click", () => {
+      shell.openExternal("http://woominec.co.kr/");
+    });
+
+    this.headerLogo.addEventListener("click", () => {
       shell.openExternal("http://woominec.co.kr/");
     });
 
