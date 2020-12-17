@@ -38,6 +38,10 @@ header .center {
   color: white;
 }
 
+header .center:hover {
+  cursor: default;
+}
+
 header .left_logo {
   height: 2rem;
 }
@@ -96,7 +100,7 @@ header .right button:hover {
   padding-bottom: 1.5rem;
   border-radius: 2rem;
   font-size: 8rem;
-  width: 91rem;
+  width: 80rem;
   letter-spacing: 3rem;
   background-color: green;
   color: white;
