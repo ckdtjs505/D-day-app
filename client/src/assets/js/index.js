@@ -55,7 +55,7 @@ class dayApp {
         this.startDate.innerHTML =
           `${startDate.split("-")[0]}. ` +
           `${startDate.split("-")[1]}. ` +
-          `${startDate.split("-")[2].split("T")[0]}`;
+          `${startDate.split("-")[2].split("T")[0]}.`;
       })
       .catch(e => {
         console.log(e);

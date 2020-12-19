@@ -107,10 +107,36 @@ header .right button:hover {
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
+.all-date {
+  display: flex;
+  justify-content: space-around;
+  font-size: 4rem;
+  line-height: 7rem;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.start-current-date {
+  margin-right: 9rem;
+}
+
+.date-box {
+  display: inline;
+}
+
+.date-title {
+  text-align: center;
+  text-justify: inter-word;
+  width: 19rem;
+  display: inline-block;
+  font-weight: 500;
+  border: solid 1px;
+}
+
 .date {
   font-size: 8rem;
   line-height: 10rem;
   font-family: "Noto Sans KR", sans-serif;
+  margin-left: 9rem;
 }
 
 .date span {
