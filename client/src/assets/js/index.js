@@ -1,4 +1,5 @@
 const { shell, remote } = require("electron");
+
 class dayApp {
   constructor() {
     this.buildUI();
@@ -14,6 +15,7 @@ class dayApp {
     this.headerLogo = document.querySelector(".left_logo");
     this.logo = document.querySelector(".logo");
     this.closeBtn = document.querySelector("button.close");
+    this.achDate = document.querySelector(".achDate");
 
     this.currentDate.innerHTML = new Date().toLocaleDateString();
     this.hideSetTimeout = null;
@@ -50,12 +52,14 @@ class dayApp {
             (1000 * 60 * 60 * 24)
         );
 
+        // 목표
         this.date.querySelector(".pur").innerHTML = `${this.numberToString(goal)}`;
+        // 달성
         this.date.querySelector(".state").innerHTML = `${this.numberToString(count)}`;
-        this.startDate.innerHTML =
-          `${startDate.split("-")[0]}. ` +
-          `${startDate.split("-")[1]}. ` +
-          `${startDate.split("-")[2].split("T")[0]}.`;
+        // 시작일
+        this.startDate.innerHTML = new Date(startDate).toLocaleDateString();
+        // 달성 예정일
+        this.achDate.innerHTML = Util.addDays(startDate, goal).toLocaleDateString("ko-KR");
       })
       .catch(e => {
         console.log(e);

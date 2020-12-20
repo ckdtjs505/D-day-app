@@ -85,6 +85,7 @@ header .right button:hover {
   color: blue;
   line-height: 1rem;
   vertical-align: middle;
+  font-weight: 900;
 }
 
 .header img {
@@ -105,6 +106,7 @@ header .right button:hover {
   background-color: green;
   color: white;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  font-weight: 900;
 }
 
 .all-date {
@@ -119,8 +121,25 @@ header .right button:hover {
   margin-right: 9rem;
 }
 
+.start-current-date div {
+  display: flex;
+  justify-content: space-around;
+}
+
 .date-box {
   display: inline;
+}
+
+.achDate,
+.startDate,
+.currentDate {
+  background-color: #282e38;
+  color: white;
+  border-radius: 1rem;
+  width: 90%;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  font-weight: 900;
 }
 
 .date-title {
@@ -128,8 +147,8 @@ header .right button:hover {
   text-justify: inter-word;
   width: 19rem;
   display: inline-block;
-  font-weight: 500;
-  border: solid 1px;
+  font-weight: 900;
+  /* border: solid 1px; */
 }
 
 .date {
@@ -147,14 +166,29 @@ header .right button:hover {
   letter-spacing: 20px;
 }
 
+.date div {
+  margin-bottom: 1.5rem;
+}
+
 .date .pur {
+  display: inline-block;
   color: black;
-  font-size: 9rem;
+  /* font-size: 9rem; */
+  border-radius: 2rem;
+  background-color: #282e38;
+  padding-left: 1rem;
+  height: 100%;
+  color: white;
 }
 
 .date .state {
+  /* font-size: 9rem; */
+  display: inline-block;
+  border-radius: 2rem;
+  background-color: #282e38;
+  padding-left: 1rem;
+  height: 100%;
   color: green;
-  font-size: 9rem;
 }
 
 .footer {
