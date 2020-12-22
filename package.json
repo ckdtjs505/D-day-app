@@ -9,7 +9,7 @@
     "dev:assets": "cd src && cross-env WEBPACK_ENV=development webpack -w",
     "build:server": "babel src --out-dir build",
     "build:assets": "cd src && cross-env WEBPACK_ENV=production webpack",
-    "copyAll": "xcopy src\\views build\\views /y && xcopy src\\dist build\\dist /y",
+    "copyAll": "cp -R src/views build/views && cp -R src/dist build/dist",
     "start": "node build/app.js",
     "build": "npm run build:server && npm run build:assets && npm run copyAll",
     "prestart": "npm run build"
