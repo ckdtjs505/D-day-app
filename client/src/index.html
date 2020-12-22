@@ -6,10 +6,12 @@
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <link rel="stylesheet" type="text/css" href="./assets/css/main.css" />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;900&display=swap"
       rel="stylesheet"
-    />
+    /> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap"
@@ -44,11 +46,17 @@
         </div>
 
         <div class="start-current-date">
-          <div> <span class="date-title"> 달성일 </span> <span class="achDate"> 0000. 00. 00. </span> </div>
-          <div> <span class="date-title"> 시작일 </span>  <span class="startDate"> 0000. 00. 00. </span> </div>
-          <div> <span class="date-title"> 현재일 </span> <span class="currentDate"> 0000. 00. 00. </span> </div>
+          <div> <span class="date-title"> 달성일 : </span> <span class="achDate"> 0000. 00. 00. </span> </div>
+          <div> <span class="date-title"> 시작일 : </span>  <span class="startDate"> 0000. 00. 00. </span> </div>
+          <div> <span class="date-title"> 현재일 : </span> <span class="currentDate"> 0000. 00. 00. </span> </div>
         </div>
       </div>
+
+      <div class="alert-message">
+        <span>
+          목표 달성일까지 10일 남았습니다. 모두들 마지막까지 조심히.. 
+        </span>
+      </div> 
 
       <div class="footer">
           <img class="logo" src="./img/woomin.png" alt="" />
