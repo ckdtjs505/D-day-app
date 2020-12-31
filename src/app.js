@@ -6,7 +6,7 @@ import "./db";
 import Count from "./models/count";
 
 const app = express();
-const port = 3000;
+const { PORT } = process.env;
 
 // pug 삽입
 app.set("view engine", "pug");
@@ -64,6 +64,6 @@ app.get("/app", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.listen(PORT || 5000, () => {
+  console.log(`Example app listening at http://localhost:${PORT}`);
 });
