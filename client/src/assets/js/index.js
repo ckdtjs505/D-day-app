@@ -42,7 +42,7 @@ class dayApp {
   }
 
   getData() {
-    fetch(`http://localhost:3000/app`)
+    fetch(`https://woomin-d-day-app.herokuapp.com/app`)
       .then(ele => ele.json())
       .then(data => {
         console.log(data);
