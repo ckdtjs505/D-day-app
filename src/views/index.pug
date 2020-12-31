@@ -7,7 +7,7 @@ html(lang="ko")
         div.time 일수 
             span(class= `${countValue[0]}`)= `달성일 : ${countValue[0] ? Math.ceil((new Date().getTime() - new Date(countValue[0].startDate).getTime()) /(1000 * 60 * 60 * 24)) : ''}일` 
             div(class= `${countValue[0]}`)= `목표일 : ${countValue[0] ? countValue[0].goal : ''}일` 
-            div(class= `${countValue[0]}`)= `전광판글씨 : ${countValue[0] ? countValue[0].mainText : ''}일`             
+            div(class= `${countValue[0]}`)= `전광판글씨 : ${countValue[0] ? countValue[0].mainText : ''}`             
             button#resetBtn 초기화
         div.start 
             input(type="text" placeholder="전광판 글씨 입력" maxlength="20").inputMainText

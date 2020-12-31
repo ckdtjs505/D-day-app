@@ -16,6 +16,7 @@ class dayApp {
     this.logo = document.querySelector(".logo");
     this.closeBtn = document.querySelector("button.close");
     this.achDate = document.querySelector(".achDate");
+    this.mainText = document.querySelector(".alert-message");
 
     this.currentDate.innerHTML = new Date().toLocaleDateString();
     this.hideSetTimeout = null;
@@ -46,7 +47,7 @@ class dayApp {
       .then(ele => ele.json())
       .then(data => {
         console.log(data);
-        const { goal, startDate } = data[0];
+        const { goal, startDate, mainText } = data[0];
         const count = Math.ceil(
           (new Date().getTime() - new Date(startDate.split("T")[0]).getTime()) /
             (1000 * 60 * 60 * 24)
@@ -60,6 +61,8 @@ class dayApp {
         this.startDate.innerHTML = new Date(startDate).toLocaleDateString();
         // 달성 예정일
         this.achDate.innerHTML = Util.addDays(startDate, goal).toLocaleDateString("ko-KR");
+        // 문구
+        this.mainText.innerHTML = mainText;
       })
       .catch(e => {
         console.log(e);
