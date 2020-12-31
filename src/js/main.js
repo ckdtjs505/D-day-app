@@ -12,6 +12,7 @@ export default class admin {
     this.resetBtn = document.getElementById("resetBtn");
     this.startBtn = document.getElementById("startBtn");
     this.goalInput = document.querySelector(".inputGoal");
+    this.mainTextInput = document.querySelector(".inputMainText");
 
     if (countValue[0]) {
       this.time.style.display = "block";
@@ -40,10 +41,18 @@ export default class admin {
       //   return;
       // }
 
+      // 전광판 글씨 예외처리
+      if (!this.mainTextInput.value) {
+        alert("전광판 문구 입력해주세요");
+        return;
+      }
+
       // 서버 호출후 페이지 리로드
-      fetch(`/start/${this.goalInput.value}`, { method: "POST" }).then(() =>
-        location.reload("true")
-      );
+      fetch(`/start/${this.goalInput.value}`, {
+        method: "POST",
+        body: JSON.stringify({ mainText: this.mainTextInput.value }),
+        headers: { "Content-Type": "application/json" }
+      }).then(() => location.reload("true"));
     });
   }
 }

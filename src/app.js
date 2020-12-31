@@ -1,7 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import path from "path";
-// import bodyParser from "body-parser";
+import bodyParser from "body-parser";
 import "./db";
 import Count from "./models/count";
 
@@ -14,6 +14,9 @@ app.set("views", path.join(__dirname, "views"));
 
 // dist file 위치 지정
 app.use("/dist", express.static(path.join(__dirname, "dist")));
+
+app.use(bodyParser.json({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // 로그 삽입
 app.use(morgan("dev"));
@@ -43,11 +46,12 @@ app.post("/reset/:id", async (req, res) => {
 
 app.post("/start/:goalDate", async (req, res) => {
   const {
-    params: { goalDate }
+    params: { goalDate },
+    body: { mainText }
   } = req;
 
   try {
-    await Count.create({ goal: goalDate });
+    await Count.create({ goal: goalDate, mainText: mainText });
   } catch (err) {
     res.status(400);
   } finally {
