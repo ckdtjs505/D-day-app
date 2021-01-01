@@ -10,7 +10,7 @@ html(lang="ko")
             div(class= `${countValue[0]}`)= `전광판글씨 : ${countValue[0] ? countValue[0].mainText : ''}`             
             button#resetBtn 초기화
         div.start 
-            input(type="text" placeholder="전광판 글씨 입력" maxlength="20").inputMainText
+            input(type="text" placeholder="전광판 글씨 입력" maxlength="30").inputMainText
             input(type="text" placeholder="달성일을 입력").inputGoal
             button#startBtn 시작
         script.

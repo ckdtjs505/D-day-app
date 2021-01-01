@@ -9,7 +9,7 @@
     "dev:assets": "cd src && cross-env WEBPACK_ENV=development webpack -w",
     "build:server": "babel src --out-dir build",
     "build:assets": "cd src && cross-env WEBPACK_ENV=production webpack",
-    "copyAll": "cp -R src/views build/views && cp -R src/dist build/dist",
+    "copyAll": "shx cp -R src/views build/views && shx cp -R src/dist build/dist",
     "start": "node build/app.js",
     "build": "npm run build:server && npm run build:assets && npm run copyAll",
     "prestart": "npm run build",
@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "eslint": "^7.10.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "shx": "^0.3.3"
   }
 }
