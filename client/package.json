@@ -2,16 +2,19 @@
   "name": "d-day-app",
   "version": "1.0.0",
   "description": "d-day-app",
-  "main": "./src/init.js",
+  "main": "./build/init.js",
   "dependencies": {},
   "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "electron": "^10.1.2",
     "electron-builder": "^22.8.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   },
   "scripts": {
-    "start": "electron .",
+    "start": "babel src --out-dir build -s inline && electron .",
     "build:win64": "electron-builder --win --x64"
   },
   "repository": {

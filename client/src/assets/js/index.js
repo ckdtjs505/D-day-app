@@ -1,4 +1,4 @@
-const { shell, remote } = require("electron");
+import { shell } from "electron";
 
 class dayApp {
   constructor() {
