@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+import datepicker from "js-datepicker";
 
 export default class admin {
   constructor() {
@@ -11,8 +12,31 @@ export default class admin {
     this.start = document.querySelector(".start");
     this.resetBtn = document.getElementById("resetBtn");
     this.startBtn = document.getElementById("startBtn");
-    this.goalInput = document.querySelector(".inputGoal");
-    this.mainTextInput = document.querySelector(".inputMainText");
+    this.goalInput = document.querySelector(".inputGoal"); // 목표일
+    this.mainTextInput = document.querySelector(".inputMainText"); // 전광판
+    this.startDateInput = document.getElementById("inputStartDate"); // 시작일
+    this.startDatePicker = datepicker("#inputStartDate", {
+      // 시작일 입력 달력
+      showAllDates: true,
+      customMonths: [
+        "1월",
+        "2월",
+        "3월",
+        "4월",
+        "5월",
+        "6월",
+        "7월",
+        "8월",
+        "9월",
+        "10월 ",
+        "11월 ",
+        "12월 "
+      ],
+      formatter: (input, date, instance) => {
+        const value = date.toLocaleDateString();
+        input.value = value; // => '1/1/2099'
+      }
+    });
 
     if (countValue[0]) {
       this.time.style.display = "block";
@@ -24,6 +48,10 @@ export default class admin {
   }
 
   event() {
+    this.startDateInput.addEventListener("click", () => {
+      this.startDatePicker.show();
+    });
+
     this.resetBtn.addEventListener("click", () => {
       fetch(`/reset/${countValue[0]._id}`, { method: "POST" }).then(() => location.reload("true"));
     });
@@ -50,7 +78,10 @@ export default class admin {
       // 서버 호출후 페이지 리로드
       fetch(`/start/${this.goalInput.value}`, {
         method: "POST",
-        body: JSON.stringify({ mainText: this.mainTextInput.value }),
+        body: JSON.stringify({
+          mainText: this.mainTextInput.value,
+          startDate: this.startDateInput.value
+        }),
         headers: { "Content-Type": "application/json" }
       }).then(() => location.reload("true"));
     });

@@ -1,4 +1,5 @@
 import { shell } from "electron";
+import Util from "./util";
 
 class dayApp {
   constructor() {
@@ -48,10 +49,14 @@ class dayApp {
       .then(data => {
         console.log(data);
         const { goal, startDate, mainText } = data[0];
-        const count = Math.ceil(
-          (new Date().getTime() - new Date(startDate.split("T")[0]).getTime()) /
-            (1000 * 60 * 60 * 24)
-        );
+        const count =
+          Math.ceil(
+            // TODO :: -1 지우는 방향으로 진행
+            // 현재 시간은 국내시간으로, 시작 날짜는 국외 기준 날짜이기에 오차가 생김
+            Math.abs(new Date().getTime() - new Date(startDate).getTime()) / (1000 * 60 * 60 * 24)
+          ) - 1;
+
+        console.log(startDate, new Date(startDate).toLocaleDateString(), new Date().getTime());
 
         // 목표
         this.date.querySelector(".pur").innerHTML = `${this.numberToString(goal)}`;

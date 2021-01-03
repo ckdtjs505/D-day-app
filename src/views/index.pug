@@ -5,13 +5,14 @@ html(lang="ko")
         title 우민 
     body
         div.time 일수 
-            span(class= `${countValue[0]}`)= `달성일 : ${countValue[0] ? Math.ceil((new Date().getTime() - new Date(countValue[0].startDate).getTime()) /(1000 * 60 * 60 * 24)) : ''}일` 
+            span(class= `${countValue[0]}`)= `달성일 : ${countValue[0] ? Math.ceil(Math.abs(new Date().getTime() - new Date(countValue[0].startDate).getTime()) /(1000 * 60 * 60 * 24)) - 1 : '' }일` 
             div(class= `${countValue[0]}`)= `목표일 : ${countValue[0] ? countValue[0].goal : ''}일` 
             div(class= `${countValue[0]}`)= `전광판글씨 : ${countValue[0] ? countValue[0].mainText : ''}`             
             button#resetBtn 초기화
         div.start 
             input(type="text" placeholder="전광판 글씨 입력" maxlength="30").inputMainText
-            input(type="text" placeholder="달성일을 입력").inputGoal
+            input(type="text" placeholder="시작일을 입력" readonly  )#inputStartDate
+            input(type="text" placeholder="목표일수 입력").inputGoal
             button#startBtn 시작
         script.
             window.countValue = !{JSON.stringify(countValue)}

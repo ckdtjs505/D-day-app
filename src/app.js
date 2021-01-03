@@ -47,11 +47,11 @@ app.post("/reset/:id", async (req, res) => {
 app.post("/start/:goalDate", async (req, res) => {
   const {
     params: { goalDate },
-    body: { mainText }
+    body: { mainText, startDate }
   } = req;
 
   try {
-    await Count.create({ goal: goalDate, mainText: mainText });
+    await Count.create({ startDate: startDate, goal: goalDate, mainText: mainText });
   } catch (err) {
     res.status(400);
   } finally {
