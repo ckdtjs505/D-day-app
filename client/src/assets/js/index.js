@@ -1,5 +1,4 @@
 import { shell } from "electron";
-import Util from "./util";
 
 class dayApp {
   constructor() {
@@ -25,24 +24,45 @@ class dayApp {
 
   event() {
     this.logo.addEventListener("click", () => {
-      shell.openExternal("http://woominec.co.kr/");
+      this.goToWebSite("http://woominec.co.kr/");
     });
 
     this.headerLogo.addEventListener("click", () => {
-      shell.openExternal("http://woominec.co.kr/");
+      this.goToWebSite("http://woominec.co.kr/");
     });
 
     // 종료 버튼 클릭시 창 숨김
     this.closeBtn.addEventListener("click", () => {
-      this.hideMainWindow();
+      window.close();
     });
   }
 
-  // 메인 윈도우 숨기기
-  hideMainWindow() {
-    window.close();
+  // 웹 사이트 이동
+  goToWebSite(url) {
+    shell.openExternal(`${url}`);
   }
 
+  // 숫자 문자열 변환
+  numberToString(num) {
+    if (num >= 1000) {
+      return num;
+    } else if (num >= 100) {
+      return `0${num}`;
+    } else if (num >= 10) {
+      return `00${num}`;
+    } else {
+      return `000${num}`;
+    }
+  }
+
+  // 날짜 더하기
+  addDays(date, days) {
+    const result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+  }
+
+  // 데이터 받기
   getData() {
     fetch(`https://woomin-d-day-app.herokuapp.com/app`)
       .then(ele => ele.json())
@@ -65,25 +85,13 @@ class dayApp {
         // 시작일
         this.startDate.innerHTML = new Date(startDate).toLocaleDateString();
         // 달성 예정일
-        this.achDate.innerHTML = Util.addDays(startDate, goal).toLocaleDateString("ko-KR");
+        this.achDate.innerHTML = this.addDays(startDate, goal).toLocaleDateString("ko-KR");
         // 문구
         this.mainText.innerHTML = mainText;
       })
       .catch(e => {
         console.log(e);
       });
-  }
-
-  numberToString(num) {
-    if (num >= 1000) {
-      return num;
-    } else if (num >= 100) {
-      return `0${num}`;
-    } else if (num >= 10) {
-      return `00${num}`;
-    } else {
-      return `000${num}`;
-    }
   }
 }
 
