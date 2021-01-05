@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+const { app, BrowserWindow } = require("electron");
 
 function createWindow() {
   // 화면 보호기 설정
@@ -27,7 +27,7 @@ function createWindow() {
       nodeIntegration: true,
       enableRemoteModule: true
     },
-    icon: null,
+    icon: "./src/img/desktop.png",
     kiosk: true,
     resizable: true,
     autoHideMenuBar: true, // 메뉴바 숨김

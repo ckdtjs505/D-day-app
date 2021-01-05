@@ -2,7 +2,7 @@
   "name": "d-day-app",
   "version": "1.0.0",
   "description": "d-day-app",
-  "main": "./build/init.js",
+  "main": "./src/init.js",
   "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.12.10",
@@ -20,6 +20,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ckdtjs505/D-day-app.git"
+  },
+  "win": {
+    "icon" :"./src/img/desktop.png"
   },
   "author": "",
   "license": "ISC",

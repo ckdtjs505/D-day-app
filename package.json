@@ -13,7 +13,8 @@
     "start": "node build/app.js",
     "build": "npm run build:server && npm run build:assets && npm run copyAll",
     "prestart": "npm run build",
-    "client": "cd client && npm run start"
+    "client": "cd client && npm run start",
+    "client:build" : "cd client && npm run build:win64"
   },
   "author": "",
   "license": "ISC",
